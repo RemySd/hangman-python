@@ -1,6 +1,7 @@
 import data
 import utils
 
+
 word = utils.get_random_word(data.words)
 chars = []
 score = 0
@@ -15,7 +16,7 @@ if last_core:
 while True:
     hidden_word = utils.generate_hidden_word(word, chars)
 
-    print('hit ' + str(score) + '/' + str(data.nbMaxHit))
+    print('hit ' + str(score) + '/' + str(data.nb_max_hit))
     print('Hidden word : ' + hidden_word)
 
     char = utils.get_input()
@@ -23,7 +24,7 @@ while True:
 
     score += 1
 
-    if score > data.nbMaxHit:
+    if score > data.nb_max_hit:
         print('The hidden word is : ' + word)
         print('DEFEATE !!!')
         break

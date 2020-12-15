@@ -1,3 +1,7 @@
-nbMaxHit = 8
+"""
+Global variables, they can be customize
+"""
+
+nb_max_hit = 8
 words = ['orange', 'banane', 'stylo', 'bouchon']
-fileScoreName = 'score.txt'
+file_score_name = 'score.txt'

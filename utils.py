@@ -48,19 +48,19 @@ def word_contains_in_chars(chars: list, word: str) -> bool:
 
 def save_score(pseudo: str, score: int) -> None:
     try:
-        score_storage = pickle.load(open(data.fileScoreName, 'rb'))
+        score_storage = pickle.load(open(data.file_score_name, 'rb'))
     except (OSError, IOError) as e:
         score_storage = {pseudo: score}
-        pickle.dump(score_storage, open(data.fileScoreName, 'wb'))
-        return None
+        pickle.dump(score_storage, open(data.file_score_name, 'wb'))
+        return
 
     score_storage[pseudo] = score
-    pickle.dump(score_storage, open(data.fileScoreName, 'wb'))
+    pickle.dump(score_storage, open(data.file_score_name, 'wb'))
 
 
 def get_last_scores(pseudo: str):
     try:
-        scores = pickle.load(open(data.fileScoreName, 'rb'))
+        scores = pickle.load(open(data.file_score_name, 'rb'))
         if scores.get(pseudo):
             return scores.get(pseudo)
     except (OSError, IOError) as e:
